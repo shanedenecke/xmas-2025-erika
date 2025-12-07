@@ -1,3 +1,5 @@
 old/**
 photos/old/**
 .env
+.vscode/settings.json
+__pycache__/functions.cpython-312.pyc
