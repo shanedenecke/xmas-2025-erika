@@ -79,15 +79,19 @@ def forward_email(
 
 ## TITLE 
 st.title("Erika's Wonderful Xmas Gift")
-st.write(app_password)
+#st.write(app_password)
 
 
 
 ### PHOTOS OF US
-left_co, right_co = st.columns(2)
+left_co, middle_co, right_co = st.columns(3)
 
 with left_co:
     st.image("photos/Shane_Erika_2.jpg", width=300)
+
+with middle_co:
+    st.image("photos/xmas.png")
+    ###
 
 with right_co:
     st.image("photos/Shane_Erika_3.jpg", width=300)
@@ -108,17 +112,24 @@ st.markdown("""
 
 
 ### INITIALIZE STATES
+passcode=None
+date_choice=None
 cat_choice=None
 shoot_ya_shot=None
 dummyval = None
 claim_prize=None
 
 
-#### QUESTION NUMBER 1
+#### Passcode
+passcode=st.text_input("What is the password")
+if passcode=='XMAS':
+    date_choice = st.selectbox(label='## Where did we have our first date',
+                options=['Da Club', 'The Pier behind Walmart', "Pier67", "Pier Bar", "Moss"]
+                )
 
-date_choice = st.selectbox(label='## Where did we have our first date',
-             options=['Da Club', 'The Pier behind Walmart', "Pier67", "Pier Bar", "Moss"]
-             )
+
+
+#### QUESTION NUMBER 1
 
 if date_choice=='Pier Bar':
     st.success("Correct Choice... Onto the next round")
@@ -142,22 +153,19 @@ if cat_choice=='Europa':
 if shoot_ya_shot:
 
     st.video("photos/Golf.mp4", autoplay=True, start_time=1, end_time=25)
-    time.sleep(26)
+    time.sleep(27)
 
     st.success("Hole in One!")
     time.sleep(2)
     
-    st.video("photos/Email Archive.mp4", loop=True, autoplay=True, width=300)
-    st.success("Sending your gift via email...", width=300)
     
-    forward_email(
-        IMAP_SERVER = "imap.gmail.com",
-        EMAIL = "shanedenecke@gmail.com",
-        app_password = app_password,
-        FORWARD_TO = "shane.denecke@protonmail.com",
-        TARGET_SUBJECT = 'All about your LottieFiles account'
-        )
-
+    #url = "https://rfrtpc7s.r.us-west-2.awstrack.me/L0/https:%2F%2Fsquareup.com%2Fapass%2Fgc%2Fdownload%2Fpersonalized%2Ff9f920a9a0b74c1288a0ec5c31cdc7c7%3Fsource=email/1/0101019af692bd0c-f7282d9d-8eab-41ec-ba77-26665e130b23-000000/2b6dUwhk1SuY_0JQ4HtcTgQFE6I=456"
+    url = "https://squareup.com/apass/gc/download/personalized/f9f920a9a0b74c1288a0ec5c31cdc7c7?source=email"
+    #st.write("check out this [link](%s)" % url)
+    st.markdown("### Congratulations 🎉! You've completed all the challenges!!!!")
+    st.markdown("### Check out this [link](%s) to claim your gift"% url)
+    st.markdown("### It'll keep those occasional lunchtimes dates going ❤️")
+    
 
 
 
@@ -167,6 +175,20 @@ if shoot_ya_shot:
 
 
 #scratch
+
+
+
+
+#st.video("photos/Email Archive.mp4", loop=True, autoplay=True, width=300)
+    #st.success("check out this [link](%s)" % url, width=300)
+    
+    # forward_email(
+    #     IMAP_SERVER = "imap.gmail.com",
+    #     EMAIL = "shanedenecke@gmail.com",
+    #     app_password = app_password,
+    #     FORWARD_TO = "shane.denecke@protonmail.com",
+    #     TARGET_SUBJECT = 'All about your LottieFiles account'
+    #     )
 
 
 # def send_email():
