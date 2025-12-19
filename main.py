@@ -33,7 +33,7 @@ def forward_email(
         IMAP_SERVER = "imap.gmail.com",
         EMAIL = "shanedenecke@gmail.com",
         FORWARD_TO = "shane.denecke@protonmail.com",
-        TARGET_SUBJECT = 'All about your LottieFiles account'
+        TARGET_SUBJECT = 'You received a gift to Rival Bros Coffee'
         ):
 
     # ---- Step 1: Connect to IMAP and fetch the email ----
@@ -90,7 +90,7 @@ with left_co:
     st.image("photos/Shane_Erika_2.jpg", width=300)
 
 with middle_co:
-    st.image("photos/xmas.png")
+    st.image("photos/xmas.png", width=300)
     ###
 
 with right_co:
@@ -160,7 +160,9 @@ if shoot_ya_shot:
     
     
     #url = "https://rfrtpc7s.r.us-west-2.awstrack.me/L0/https:%2F%2Fsquareup.com%2Fapass%2Fgc%2Fdownload%2Fpersonalized%2Ff9f920a9a0b74c1288a0ec5c31cdc7c7%3Fsource=email/1/0101019af692bd0c-f7282d9d-8eab-41ec-ba77-26665e130b23-000000/2b6dUwhk1SuY_0JQ4HtcTgQFE6I=456"
-    url = "https://squareup.com/apass/gc/download/personalized/f9f920a9a0b74c1288a0ec5c31cdc7c7?source=email"
+    # url = "https://squareup.com/apass/gc/download/personalized/f9f920a9a0b74c1288a0ec5c31cdc7c7?source=email"
+    # url = "https://track.pstmrk.it/3s/api.loopz.io%2Fv1%2Fpasses%2Faccount%2F16ebf7d4-dcae-47c0-b242-3f0623208e9e/NO0t/mSXCAQ/AQ/77854ec6-2e77-40f6-8962-539b50688751/3/585CaKIDy0"
+    url = "https://track.pstmrk.it/3s/api.loopz.io%2Fv1%2Fpasses%2Faccount%2F16ebf7d4-dcae-47c0-b242-3f0623208e9e/NO0t/mSXCAQ/AQ/77854ec6-2e77-40f6-8962-539b50688751/3/585CaKIDy0"
     #st.write("check out this [link](%s)" % url)
     st.markdown("### Congratulations 🎉! You've completed all the challenges!!!!")
     st.markdown("### Check out this [link](%s) to claim your gift"% url)
